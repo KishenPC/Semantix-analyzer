@@ -1,43 +1,41 @@
-export interface VariableState {
-  [key: string]: number | string | boolean | null | number[] | string[]
-}
-
 export interface ExecutionStep {
   line: number
-  variables: VariableState
+  variables: Record<string, string | number | boolean | null>
+  output?: string
   callStack?: string[]
 }
 
 export interface LoopInvariant {
-  line: number
+  location: string
   invariant: string
+  explanation: string
 }
 
-export interface RecursionInvariant {
-  functionName: string
-  baseCondition: string
-  invariant: string
+export interface RecursiveInvariant {
+  function: string
+  baseCase: string
+  recursiveCase: string
+  explanation: string
 }
 
-export interface TimeComplexity {
-  best: string
-  average: string
-  worst: string
-  reasoning: string
+export interface ComplexityAnalysis {
+  time: {
+    best: string
+    average: string
+    worst: string
+    explanation: string
+  }
+  space: {
+    complexity: string
+    explanation: string
+  }
 }
 
 export interface AnalysisResult {
-  execution_trace: ExecutionStep[]
-  loop_invariants: LoopInvariant[]
-  recursion_invariants: RecursionInvariant[]
-  time_complexity: TimeComplexity
-  space_complexity: string
+  executionTrace: ExecutionStep[]
+  loopInvariants: LoopInvariant[]
+  recursiveInvariants: RecursiveInvariant[]
+  complexity: ComplexityAnalysis
 }
 
-export type Language = 'cpp' | 'python' | 'java'
-
-export interface AnalysisRequest {
-  code: string
-  input: string
-  language: Language
-}
+export type Language = 'python' | 'javascript' | 'java' | 'cpp'

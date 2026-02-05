@@ -17,7 +17,12 @@ export function ComplexityPanel({
 }: ComplexityPanelProps) {
   if (!timeComplexity && !spaceComplexity) {
     return (
-      <div className={cn('flex items-center justify-center h-full text-muted-foreground text-sm', className)}>
+      <div
+        className={cn(
+          'flex items-center justify-center h-full text-muted-foreground text-sm',
+          className
+        )}
+      >
         Run analysis to see complexity
       </div>
     )
@@ -32,7 +37,6 @@ export function ComplexityPanel({
       </div>
 
       <div className="flex-1 overflow-auto p-4 space-y-4">
-        {/* Time Complexity */}
         {timeComplexity && (
           <div className="space-y-3">
             <div className="flex items-center gap-2 text-sm font-medium text-foreground">
@@ -72,7 +76,6 @@ export function ComplexityPanel({
           </div>
         )}
 
-        {/* Space Complexity */}
         {spaceComplexity && (
           <div className="space-y-3">
             <div className="flex items-center gap-2 text-sm font-medium text-foreground">
@@ -81,9 +84,7 @@ export function ComplexityPanel({
             </div>
 
             <div className="p-3 rounded-lg bg-accent/5 border border-accent/20">
-              <p className="text-sm text-foreground/90 leading-relaxed">
-                {spaceComplexity}
-              </p>
+              <p className="text-sm text-foreground/90 leading-relaxed">{spaceComplexity}</p>
             </div>
           </div>
         )}

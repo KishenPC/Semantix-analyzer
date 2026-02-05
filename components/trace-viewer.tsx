@@ -41,7 +41,12 @@ function VariableDisplay({ variables }: { variables: VariableState }) {
 export function TraceViewer({ steps, currentStep, className }: TraceViewerProps) {
   if (steps.length === 0) {
     return (
-      <div className={cn('flex items-center justify-center h-full text-muted-foreground text-sm', className)}>
+      <div
+        className={cn(
+          'flex items-center justify-center h-full text-muted-foreground text-sm',
+          className
+        )}
+      >
         Run analysis to see execution trace
       </div>
     )
@@ -69,7 +74,7 @@ export function TraceViewer({ steps, currentStep, className }: TraceViewerProps)
               className={cn(
                 'p-3 rounded-lg border transition-all duration-200',
                 i === currentStep
-                  ? 'bg-line-active border-primary shadow-[0_0_15px_var(--glow)]'
+                  ? 'bg-primary/10 border-primary'
                   : i < currentStep
                     ? 'bg-muted/30 border-border opacity-60'
                     : 'bg-muted/20 border-border/50 opacity-40'

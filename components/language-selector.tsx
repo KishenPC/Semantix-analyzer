@@ -9,10 +9,10 @@ interface LanguageSelectorProps {
   className?: string
 }
 
-const languages: { value: Language; label: string; icon: string }[] = [
-  { value: 'cpp', label: 'C++', icon: 'C++' },
-  { value: 'python', label: 'Python', icon: 'Py' },
-  { value: 'java', label: 'Java', icon: 'Ja' },
+const languages: { value: Language; label: string }[] = [
+  { value: 'cpp', label: 'C++' },
+  { value: 'python', label: 'Python' },
+  { value: 'java', label: 'Java' },
 ]
 
 export function LanguageSelector({ value, onChange, className }: LanguageSelectorProps) {

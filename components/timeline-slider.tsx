@@ -73,8 +73,12 @@ export function TimelineSlider({
   }
 
   return (
-    <div className={cn('flex flex-col gap-3 p-4 bg-card/50 backdrop-blur-sm border border-border rounded-lg', className)}>
-      {/* Controls */}
+    <div
+      className={cn(
+        'flex flex-col gap-3 p-4 bg-card/50 backdrop-blur-sm border border-border rounded-lg',
+        className
+      )}
+    >
       <div className="flex items-center justify-center gap-2">
         <button
           onClick={reset}
@@ -98,8 +102,8 @@ export function TimelineSlider({
           className={cn(
             'p-3 rounded-full transition-all duration-200',
             isPlaying
-              ? 'bg-accent text-accent-foreground shadow-[0_0_20px_var(--glow-accent)]'
-              : 'bg-primary text-primary-foreground shadow-[0_0_20px_var(--glow)]'
+              ? 'bg-accent text-accent-foreground'
+              : 'bg-primary text-primary-foreground'
           )}
           aria-label={isPlaying ? 'Pause' : 'Play'}
         >
@@ -115,11 +119,8 @@ export function TimelineSlider({
         </button>
       </div>
 
-      {/* Slider */}
       <div className="flex items-center gap-3">
-        <span className="text-xs text-muted-foreground font-mono w-8">
-          {currentStep + 1}
-        </span>
+        <span className="text-xs text-muted-foreground font-mono w-8">{currentStep + 1}</span>
         <div className="relative flex-1 h-2 bg-muted rounded-full overflow-hidden">
           <div
             className="absolute inset-y-0 left-0 bg-primary rounded-full transition-all duration-200"
@@ -134,9 +135,7 @@ export function TimelineSlider({
             className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
           />
         </div>
-        <span className="text-xs text-muted-foreground font-mono w-8 text-right">
-          {totalSteps}
-        </span>
+        <span className="text-xs text-muted-foreground font-mono w-8 text-right">{totalSteps}</span>
       </div>
     </div>
   )

@@ -1,7 +1,6 @@
 'use client'
 
-import React from "react"
-
+import React from 'react'
 import { useCallback, useRef, useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 
@@ -60,8 +59,12 @@ export function CodeEditor({
   )
 
   return (
-    <div className={cn('relative flex h-full overflow-hidden rounded-lg bg-muted/50 border border-border', className)}>
-      {/* Line numbers */}
+    <div
+      className={cn(
+        'relative flex h-full overflow-hidden rounded-lg bg-muted/50 border border-border',
+        className
+      )}
+    >
       <div
         ref={lineNumbersRef}
         className="flex-shrink-0 overflow-hidden select-none bg-muted/30 border-r border-border"
@@ -73,7 +76,7 @@ export function CodeEditor({
               key={i}
               className={cn(
                 'h-6 leading-6 transition-all duration-200',
-                activeLine === i + 1 && 'text-primary font-semibold bg-line-active rounded-sm'
+                activeLine === i + 1 && 'text-primary font-semibold'
               )}
             >
               {i + 1}
@@ -82,16 +85,11 @@ export function CodeEditor({
         </div>
       </div>
 
-      {/* Code area */}
       <div className="relative flex-1 overflow-hidden">
-        {/* Highlight overlay for active line */}
         {activeLine && (
           <div
-            className="absolute left-0 right-0 h-6 bg-line-active border-l-2 border-primary pointer-events-none transition-all duration-200"
-            style={{
-              top: `${(activeLine - 1) * 24 + 12}px`,
-              boxShadow: '0 0 20px var(--glow)',
-            }}
+            className="absolute left-0 right-0 h-6 bg-primary/10 border-l-2 border-primary pointer-events-none transition-all duration-200"
+            style={{ top: `${(activeLine - 1) * 24 + 12}px` }}
           />
         )}
 

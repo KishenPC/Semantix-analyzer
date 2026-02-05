@@ -19,7 +19,12 @@ export function InvariantsPanel({
 
   if (!hasInvariants) {
     return (
-      <div className={cn('flex items-center justify-center h-full text-muted-foreground text-sm', className)}>
+      <div
+        className={cn(
+          'flex items-center justify-center h-full text-muted-foreground text-sm',
+          className
+        )}
+      >
         No invariants detected
       </div>
     )
@@ -34,7 +39,6 @@ export function InvariantsPanel({
       </div>
 
       <div className="flex-1 overflow-auto p-4 space-y-4">
-        {/* Loop Invariants */}
         {loopInvariants.length > 0 && (
           <div className="space-y-3">
             <div className="flex items-center gap-2 text-sm font-medium text-foreground">
@@ -42,24 +46,18 @@ export function InvariantsPanel({
               Loop Invariants
             </div>
             {loopInvariants.map((inv, i) => (
-              <div
-                key={i}
-                className="p-3 rounded-lg bg-primary/5 border border-primary/20"
-              >
+              <div key={i} className="p-3 rounded-lg bg-primary/5 border border-primary/20">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="px-2 py-0.5 text-xs font-mono bg-primary/20 text-primary rounded">
                     Line {inv.line}
                   </span>
                 </div>
-                <p className="text-sm text-foreground/90 leading-relaxed">
-                  {inv.invariant}
-                </p>
+                <p className="text-sm text-foreground/90 leading-relaxed">{inv.invariant}</p>
               </div>
             ))}
           </div>
         )}
 
-        {/* Recursion Invariants */}
         {recursionInvariants.length > 0 && (
           <div className="space-y-3">
             <div className="flex items-center gap-2 text-sm font-medium text-foreground">
@@ -67,10 +65,7 @@ export function InvariantsPanel({
               Recursion Invariants
             </div>
             {recursionInvariants.map((inv, i) => (
-              <div
-                key={i}
-                className="p-3 rounded-lg bg-accent/5 border border-accent/20"
-              >
+              <div key={i} className="p-3 rounded-lg bg-accent/5 border border-accent/20">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="px-2 py-0.5 text-xs font-mono bg-accent/20 text-accent rounded">
                     {inv.functionName}
@@ -81,9 +76,7 @@ export function InvariantsPanel({
                     <span className="text-muted-foreground">Base: </span>
                     <span className="text-foreground/90">{inv.baseCondition}</span>
                   </div>
-                  <p className="text-foreground/90 leading-relaxed">
-                    {inv.invariant}
-                  </p>
+                  <p className="text-foreground/90 leading-relaxed">{inv.invariant}</p>
                 </div>
               </div>
             ))}

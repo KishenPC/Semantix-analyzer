@@ -1,7 +1,15 @@
 'use client'
 
 import { useState } from 'react'
-import { Play, RotateCcw, ChevronRight, ChevronDown, Clock, Cpu, HardDrive } from 'lucide-react'
+import {
+  Play,
+  RotateCcw,
+  ChevronRight,
+  ChevronDown,
+  Clock,
+  Cpu,
+  HardDrive,
+} from 'lucide-react'
 
 // Types
 interface TraceStep {

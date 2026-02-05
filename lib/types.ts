@@ -1,41 +1,23 @@
-export interface ExecutionStep {
+export interface TraceStep {
   line: number
-  variables: Record<string, string | number | boolean | null>
+  variables: Record<string, string | number | boolean>
   output?: string
-  callStack?: string[]
-}
-
-export interface LoopInvariant {
-  location: string
-  invariant: string
-  explanation: string
-}
-
-export interface RecursiveInvariant {
-  function: string
-  baseCase: string
-  recursiveCase: string
-  explanation: string
-}
-
-export interface ComplexityAnalysis {
-  time: {
-    best: string
-    average: string
-    worst: string
-    explanation: string
-  }
-  space: {
-    complexity: string
-    explanation: string
-  }
 }
 
 export interface AnalysisResult {
-  executionTrace: ExecutionStep[]
-  loopInvariants: LoopInvariant[]
-  recursiveInvariants: RecursiveInvariant[]
-  complexity: ComplexityAnalysis
+  trace: TraceStep[]
+  loopInvariants: string[]
+  recursiveInvariants: string[]
+  complexity: {
+    time: {
+      best: string
+      average: string
+      worst: string
+      explanation: string
+    }
+    space: {
+      value: string
+      explanation: string
+    }
+  }
 }
-
-export type Language = 'python' | 'javascript' | 'java' | 'cpp'

@@ -4,43 +4,48 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Geist Mono', ui-monospace, monospace;
-  --radius: 0.625rem;
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'JetBrains Mono', 'Geist Mono', monospace;
 
-  --color-background: #0a0a0f;
-  --color-foreground: #e4e4e7;
-  --color-card: #111118;
-  --color-card-foreground: #e4e4e7;
-  --color-popover: #111118;
-  --color-popover-foreground: #e4e4e7;
+  --color-background: #09090b;
+  --color-foreground: #fafafa;
+  --color-card: #111114;
+  --color-card-foreground: #fafafa;
+  --color-popover: #111114;
+  --color-popover-foreground: #fafafa;
   --color-primary: #6366f1;
-  --color-primary-foreground: #fafafa;
-  --color-secondary: #1c1c27;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #1c1c22;
   --color-secondary-foreground: #a1a1aa;
-  --color-muted: #18181f;
+  --color-muted: #18181b;
   --color-muted-foreground: #71717a;
   --color-accent: #22d3ee;
-  --color-accent-foreground: #0a0a0f;
+  --color-accent-foreground: #09090b;
   --color-destructive: #ef4444;
-  --color-destructive-foreground: #fafafa;
-  --color-border: #27272f;
-  --color-input: #1c1c27;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #27272a;
+  --color-input: #1c1c22;
   --color-ring: #6366f1;
+
+  --color-surface: #0f0f13;
+  --color-surface-raised: #161619;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+
+  --radius: 0.5rem;
 }
 
-*,
-*::before,
-*::after {
+* {
   border-color: var(--color-border);
 }
 
 body {
-  background-color: var(--color-background);
+  background: var(--color-background);
   color: var(--color-foreground);
+  font-family: var(--font-sans);
 }
 
-/* Custom scrollbar for dark theme */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -51,7 +56,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272f;
+  background: #27272a;
   border-radius: 3px;
 }
 
@@ -59,47 +64,29 @@ body {
   background: #3f3f46;
 }
 
-/* Range slider styling */
-input[type='range'] {
+/* Code editor textarea */
+textarea {
+  font-family: var(--font-mono);
+}
+
+/* Range slider */
+input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
-  background: transparent;
-  cursor: pointer;
-}
-
-input[type='range']::-webkit-slider-runnable-track {
   height: 4px;
-  background: #27272f;
+  background: #27272a;
   border-radius: 2px;
-}
-
-input[type='range']::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #6366f1;
-  margin-top: -5px;
-  border: 2px solid #0a0a0f;
-  box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
-}
-
-input[type='range']::-moz-range-track {
-  height: 4px;
-  background: #27272f;
-  border-radius: 2px;
-}
-
-input[type='range']::-moz-range-thumb {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #6366f1;
-  border: 2px solid #0a0a0f;
-  box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
-}
-
-/* Code editor textarea */
-textarea:focus {
   outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #6366f1;
+  cursor: pointer;
+  border: 2px solid #09090b;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
 }

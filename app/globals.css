@@ -7,9 +7,99 @@
   --font-sans: 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Geist Mono', ui-monospace, monospace;
   --radius: 0.625rem;
+
+  --color-background: #0a0a0f;
+  --color-foreground: #e4e4e7;
+  --color-card: #111118;
+  --color-card-foreground: #e4e4e7;
+  --color-popover: #111118;
+  --color-popover-foreground: #e4e4e7;
+  --color-primary: #6366f1;
+  --color-primary-foreground: #fafafa;
+  --color-secondary: #1c1c27;
+  --color-secondary-foreground: #a1a1aa;
+  --color-muted: #18181f;
+  --color-muted-foreground: #71717a;
+  --color-accent: #22d3ee;
+  --color-accent-foreground: #0a0a0f;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+  --color-border: #27272f;
+  --color-input: #1c1c27;
+  --color-ring: #6366f1;
+}
+
+*,
+*::before,
+*::after {
+  border-color: var(--color-border);
 }
 
 body {
-  background-color: #09090b;
-  color: #fafafa;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272f;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Range slider styling */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  height: 4px;
+  background: #27272f;
+  border-radius: 2px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #6366f1;
+  margin-top: -5px;
+  border: 2px solid #0a0a0f;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
+}
+
+input[type='range']::-moz-range-track {
+  height: 4px;
+  background: #27272f;
+  border-radius: 2px;
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #6366f1;
+  border: 2px solid #0a0a0f;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
+}
+
+/* Code editor textarea */
+textarea:focus {
+  outline: none;
 }

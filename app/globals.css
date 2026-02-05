@@ -38,7 +38,7 @@
   --sidebar-border: oklch(0.22 0.02 270);
   --sidebar-ring: oklch(0.65 0.2 270);
   
-  /* TraceLab custom tokens */
+  /* Semantix custom tokens */
   --glow: oklch(0.65 0.2 270 / 0.4);
   --glow-accent: oklch(0.55 0.18 200 / 0.4);
   --glass: oklch(0.15 0.02 270 / 0.6);

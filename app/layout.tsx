@@ -9,7 +9,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono
 const _jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" });
 
 export const metadata: Metadata = {
-  title: 'TraceLab - AI Code Analysis',
+  title: 'Semantix - AI Code Analysis',
   description: 'Analyze code execution traces, loop invariants, and complexity with AI',
   generator: 'v0.app',
   icons: {

@@ -17,7 +17,7 @@ import { cn } from '@/lib/utils'
 
 type TabId = 'trace' | 'invariants' | 'complexity'
 
-export default function TraceLab() {
+export default function Semantix() {
   const [code, setCode] = useState(SAMPLE_CODE)
   const [input, setInput] = useState(SAMPLE_INPUT)
   const [language, setLanguage] = useState<Language>('cpp')

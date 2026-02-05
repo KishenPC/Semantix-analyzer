@@ -27,7 +27,7 @@ export function Header({ className }: HeaderProps) {
           </svg>
         </div>
         <div>
-          <h1 className="text-lg font-semibold text-foreground tracking-tight">TraceLab</h1>
+          <h1 className="text-lg font-semibold text-foreground tracking-tight">Semantix</h1>
           <p className="text-xs text-muted-foreground">AI-Powered Code Analysis</p>
         </div>
       </div>
